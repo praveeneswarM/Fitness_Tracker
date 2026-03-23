@@ -45,7 +45,7 @@ spec:
 
             - name: NODE_ENV
               valueFrom:
-                configKeyRef:
+                configMapKeyRef:
                   name: fitness-configmap
                   key: NODE_ENV 
             # Datadog APM (tracing) env variables
