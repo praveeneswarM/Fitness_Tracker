@@ -5,7 +5,7 @@ metadata:
   namespace: praveen-ns 
 spec:
   gatewayClassName: kgateway
-  listners:
+  listeners:
   - name: http
     protocol: HTTP 
     port: 80
