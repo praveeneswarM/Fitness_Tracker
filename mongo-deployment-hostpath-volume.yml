@@ -37,4 +37,4 @@ spec:
         - name: praveen-storage
           hostPath:
             path: /ust
-            type: Directory
+            type: DirectoryOrCreate
