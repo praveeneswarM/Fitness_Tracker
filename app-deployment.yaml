@@ -28,12 +28,12 @@ spec:
           ports:
             - containerPort: 5000
           resources:
-          requests:
-            memory: "256Mi"
-            cpu: "100m"
-          limits:
-            memory: "512Mi"
-            cpu: "200m"
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "200m"
           # ✔ All configMap vars removed
           # ✔ Direct env variables added
           env:
