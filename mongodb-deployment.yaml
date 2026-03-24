@@ -30,10 +30,13 @@ spec:
           limits:
             memory: "512Mi"
             cpu: "200m"
-        
+        volumeMounts:
+          - name: praveen-storage
+            mountPath: /data/db
       volumes:
         - name: praveen-storage
-          emptyDir: {}
+          emptyDir: 
+            sizeLimit: "512Mi"
 ---
 apiVersion: v1
 kind: Service
