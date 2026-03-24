@@ -25,10 +25,10 @@ spec:
         - containerPort: 27017
         resources:
           requests:
-            memory: "20Mi"
+            memory: "128Mi"
             cpu: "100m"
           limits:
-            memory: "30Mi"
+            memory: "130Mi"
             cpu: "200m"
         volumeMounts:
           - name: praveen-storage
