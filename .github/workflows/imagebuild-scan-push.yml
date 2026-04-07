@@ -20,7 +20,7 @@ jobs:
     
     - name: Build Image
       run: |
-        docker build -t $IMAGE_NAME .
+        docker build -t $IMAGE_NAME:$TAG .
     
     - name: Install Trivy
       run: |
@@ -29,7 +29,7 @@ jobs:
 
     - name: Scan-Image
       run: |
-        trivy image --severity HIGH,CRITICAL --exit-code=0 $IMAGE_NAME:$TAG
+        trivy image --severity HIGH,CRITICAL $IMAGE_NAME:$TAG
 
     - name: Login Hub
       run: |
