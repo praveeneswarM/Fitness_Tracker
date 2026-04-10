@@ -103,3 +103,9 @@ jobs:
 
       - name: Setup SNYK
         uses: snyk/actions@master
+
+      - name: Auth SNYK and Scan
+        run: |
+          snyk auth ${{ secrets.SNYK_TOKEN }}
+          snyk test
+          snyk monitor
