@@ -92,7 +92,6 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
       # If you wish to fail your job when the Quality Gate is red, uncomment the
       # following lines. This would typically be used to fail a deployment.
       # - uses: SonarSource/sonarqube-quality-gate-action@v1
@@ -103,9 +102,11 @@ jobs:
 
       - name: Setup SNYK
         uses: snyk/actions@master
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
 
       - name: Auth SNYK and Scan
         run: |
-          snyk test
           snyk monitor
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
