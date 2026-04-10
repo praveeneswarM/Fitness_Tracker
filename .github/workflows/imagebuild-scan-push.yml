@@ -104,9 +104,3 @@ jobs:
         uses: snyk/actions@master
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-
-      - name: Auth SNYK and Scan
-        run: |
-          snyk monitor
-        env:
-          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
