@@ -7,7 +7,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/praveeneswarM/Fitness_Tracker
-    targetRevision: main
+    targetRevision: master
     path: helm
     helm:
       values: |
