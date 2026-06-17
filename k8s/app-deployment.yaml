@@ -119,7 +119,8 @@ spec:
     spec:
       containers:
       - name: fitness-tracker-app
-        image: pulkit197/fitness_tracker-master-copy3-fitness-app:latest
+        # image: pulkit197/fitness_tracker-master-copy3-fitness-app:latest
+        image: fitnessrepo.azurecr.io/fitnessapp:latest
 
         ports:
         - containerPort: 5000
@@ -174,18 +175,18 @@ spec:
         - name: DD_VERSION
           value: "1.0.0"
 
-        volumeMounts:
-        - name: secrets-store-inline
-          mountPath: "/mnt/secrets-store"
-          readOnly: true
+      #   volumeMounts:
+      #   - name: secrets-store-inline
+      #     mountPath: "/mnt/secrets-store"
+      #     readOnly: true
 
-      volumes:
-      - name: secrets-store-inline
-        csi:
-          driver: secrets-store.csi.k8s.io
-          readOnly: true
-          volumeAttributes:
-            secretProviderClass: "fitness-kv"
+      # volumes:
+      # - name: secrets-store-inline
+      #   csi:
+      #     driver: secrets-store.csi.k8s.io
+      #     readOnly: true
+      #     volumeAttributes:
+      #       secretProviderClass: "fitness-kv"
 
 ---
 apiVersion: v1
